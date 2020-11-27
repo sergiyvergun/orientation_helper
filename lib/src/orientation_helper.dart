@@ -21,7 +21,7 @@ class OrientationHelper {
     navigatorObserver = _navigatorUtils.observer;
   }
 
-  Route<dynamic> onGenerateRoute({@required RouteSettings settings}) {
+  Route<dynamic> onGenerateRoute(RouteSettings settings) {
     return _navigatorUtils.onGenerateRoute(settings);
   }
 }
