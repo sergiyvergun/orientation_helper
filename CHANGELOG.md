@@ -12,6 +12,8 @@
  Provide documentation
  
 ## [1.0.1+1] - 27.11.2020
- Update readme
+ Update readme 
+## [1.0.1+2] - 27.11.2020
+ Remove unused dependencies
 
 

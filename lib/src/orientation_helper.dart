@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:orientation_helper/src/utils/navigator_utils.dart';
-import 'package:orientation_helper/src/utils/orientation_utils.dart';
 
 import 'models/route_details.dart';
 
