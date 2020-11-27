@@ -1,7 +1,7 @@
 name: orientation_helper
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+homepage: https://github.com/sergiyvergun/orientation_helper
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
