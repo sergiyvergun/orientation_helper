@@ -7,18 +7,16 @@ import 'models/route_details.dart';
 
 class OrientationHelper {
   final List<RouteDetails> routes;
-  NavigatorObserverWithOrientation navigatorObserver;
 
-  OrientationHelper({@required this.routes});
+  NavigatorObserverWithOrientation get navigatorObserver =>
+      _navigatorUtils.observer;
 
   NavigatorUtils _navigatorUtils;
   OrientationUtils _orientationUtils;
 
-  main() {
+  OrientationHelper({@required this.routes}) {
     _navigatorUtils = NavigatorUtils(routes: routes);
     _orientationUtils = OrientationUtils();
-
-    navigatorObserver = _navigatorUtils.observer;
   }
 
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
