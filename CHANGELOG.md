@@ -10,5 +10,8 @@
 ## [1.0.1] - 27.11.2020
 
  Provide documentation
+ 
+## [1.0.1+1] - 27.11.2020
+ Update readme
 
 
