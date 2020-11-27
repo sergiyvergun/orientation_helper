@@ -5,6 +5,10 @@
 
 ## [1.0.0] - 27.11.2020
 
- Fix issues and provide documentation
+ Fix issues
+
+## [1.0.1] - 27.11.2020
+
+ Provide documentation
 
 
