@@ -2,12 +2,12 @@
 
 A Flutter plugin to easily handle screen orientation for every route in your app.
 <p align="center">
-<img src="https://user-images.githubusercontent.com/30001806/100485162-c257d400-3107-11eb-9d1e-92783e6a741a.png" height="550" alt="Portrait Only" />
+<img src="https://user-images.githubusercontent.com/30001806/100485162-c257d400-3107-11eb-9d1e-92783e6a741a.png" alt="Portrait Only" />
 </p>
 
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/30001806/100485179-d1d71d00-3107-11eb-9f72-60fe20e16f05.png" height="550" alt="Rotation" />
+<img src="https://user-images.githubusercontent.com/30001806/100485179-d1d71d00-3107-11eb-9f72-60fe20e16f05.png" alt="Rotation" />
 </p>
 
 
