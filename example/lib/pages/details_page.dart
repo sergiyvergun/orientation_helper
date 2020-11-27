@@ -30,7 +30,24 @@ class DetailsPage extends StatelessWidget {
               )
             ]);
           } else {
-            return Cover();
+            return Column(children: [
+              Expanded(flex: 5, child: Cover()),
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(height: 10),
+                      Head(),
+                      Container(height: 11),
+                      Subhead(),
+                    ],
+                  ),
+                ),
+              )
+            ]);
           }
         },
       ),

@@ -20,8 +20,11 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      /// Setup OrientationHelper
+      debugShowCheckedModeBanner: false,
+
       initialRoute: AppRoutes.home.name,
+
+      /// Setup OrientationHelper
       navigatorObservers: [
         orientationHelper.navigatorObserver,
       ],
