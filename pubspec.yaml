@@ -11,6 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # Linter
+  pedantic: ^1.9.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
