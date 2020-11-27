@@ -11,13 +11,12 @@ class OrientationHelper {
   NavigatorObserverWithOrientation get navigatorObserver =>
       _navigatorUtils.observer;
 
-  NavigatorUtils _navigatorUtils;
-  OrientationUtils _orientationUtils;
+  final NavigatorUtils _navigatorUtils;
+  final OrientationUtils _orientationUtils;
 
-  OrientationHelper({@required this.routes}) {
-    _navigatorUtils = NavigatorUtils(routes: routes);
-    _orientationUtils = OrientationUtils();
-  }
+  OrientationHelper({@required this.routes})
+      : _navigatorUtils = NavigatorUtils(routes: routes),
+        _orientationUtils = OrientationUtils();
 
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
     return _navigatorUtils.onGenerateRoute(settings);
