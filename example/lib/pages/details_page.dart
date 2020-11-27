@@ -36,14 +36,16 @@ class DetailsPage extends StatelessWidget {
                 flex: 2,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(height: 10),
-                      Head(),
-                      Container(height: 11),
-                      Subhead(),
-                    ],
+                  child: SafeArea(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(height: 10),
+                        Head(),
+                        Container(height: 11),
+                        Subhead(),
+                      ],
+                    ),
                   ),
                 ),
               )
