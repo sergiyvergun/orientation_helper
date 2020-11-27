@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:orientation_helper/models/screen_orientation.dart';
+import 'package:orientation_helper/src/models/screen_orientation.dart';
 
 class RouteDetails {
   final String name;
