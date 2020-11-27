@@ -11,6 +11,7 @@ class NavigatorUtils {
 
   final observer = NavigatorObserverWithOrientation();
 
+  /// get routeDetails and set orientation setting to the route
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
     var routeDetails = routes
         .firstWhere((RouteDetails details) => details.name == settings.name);
@@ -22,6 +23,8 @@ class NavigatorUtils {
 }
 
 class NavigatorObserverWithOrientation extends NavigatorObserver {
+  /// set orientation on didPop and didPush
+
   @override
   void didPop(Route route, Route previousRoute) {
     if (previousRoute.settings.arguments is ScreenOrientation) {
