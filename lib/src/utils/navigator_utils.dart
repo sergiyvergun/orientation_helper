@@ -22,9 +22,9 @@ class NavigatorUtils {
   }
 }
 
+/// handle orientation
 class NavigatorObserverWithOrientation extends NavigatorObserver {
-  /// set orientation on didPop and didPush
-
+  /// set orientation on didPop
   @override
   void didPop(Route route, Route previousRoute) {
     if (previousRoute.settings.arguments is ScreenOrientation) {
@@ -35,6 +35,7 @@ class NavigatorObserverWithOrientation extends NavigatorObserver {
     }
   }
 
+  /// set orientation on didPush
   @override
   void didPush(Route route, Route previousRoute) {
     if (route.settings.arguments is ScreenOrientation) {

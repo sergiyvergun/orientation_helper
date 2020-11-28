@@ -3,7 +3,6 @@ import 'package:orientation_helper/src/models/screen_orientation.dart';
 
 class OrientationUtils {
   /// set preferred orientations
-
   void setOrientation(ScreenOrientation orientation) {
     List<DeviceOrientation> orientations;
     switch (orientation) {

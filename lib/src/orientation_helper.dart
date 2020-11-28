@@ -4,7 +4,7 @@ import 'package:orientation_helper/src/utils/navigator_utils.dart';
 
 import 'models/route_details.dart';
 
-/// To help with setting specific orientation for every page
+/// To help with setting specific orientation for every route
 class OrientationHelper {
   final List<RouteDetails> routes;
 
