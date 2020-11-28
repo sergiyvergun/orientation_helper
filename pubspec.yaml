@@ -1,6 +1,6 @@
 name: orientation_helper
 description: A Flutter plugin to easily handle screen orientation for every route in your app.
-version: 1.0.1+2
+version: 1.0.1+3
 homepage: https://github.com/sergiyvergun/orientation_helper
 
 environment:
