@@ -1,4 +1,4 @@
-#1.0.2
+# 1.0.2
  - Change orientation only for PageRoutes (Don't change orientation when dialogs, bottomSheets ..etc are opened).
  - Add ```defaultOrientation``` property
 
