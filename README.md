@@ -18,10 +18,10 @@ Create routes and set their orientation:
 
 ``` dart
 class AppRoutes {
+  // has defaultOrientation
   static var home = RouteDetails(
     name: 'home',
     page: HomePage(),
-    orientation: ScreenOrientation.portraitOnly,
   );
   static var details = RouteDetails(
     name: '/details',
@@ -35,7 +35,6 @@ class AppRoutes {
       ];
 }
 ```
-``` ScreenOrientantion.portraitOnly ``` set as default
 
 
 
@@ -53,7 +52,10 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
-    orientationHelper = OrientationHelper(routes: AppRoutes.routes);
+    orientationHelper = OrientationHelper(
+      routes: AppRoutes.routes,
+      defaultOrientation: ScreenOrientation.portraitOnly,
+    );
     super.initState();
   }
 
