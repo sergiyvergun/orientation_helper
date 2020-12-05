@@ -13,7 +13,10 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
-    orientationHelper = OrientationHelper(routes: AppRoutes.routes);
+    orientationHelper = OrientationHelper(
+      routes: AppRoutes.routes,
+      defaultOrientation: ScreenOrientation.portraitOnly,
+    );
     super.initState();
   }
 

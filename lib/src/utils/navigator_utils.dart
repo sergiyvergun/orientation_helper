@@ -6,10 +6,18 @@ import 'orientation_utils.dart';
 
 class NavigatorUtils {
   final List<RouteDetails> routes;
+  final OrientationUtils orientationUtils;
 
-  NavigatorUtils({@required this.routes});
+  NavigatorUtils({
+    @required this.routes,
+    @required this.orientationUtils,
+  });
 
-  final observer = NavigatorObserverWithOrientation();
+  NavigatorObserverWithOrientation get observer =>
+      NavigatorObserverWithOrientation(
+          onNeedChangeRouteOrientation: (Route<dynamic> route) {
+        orientationUtils.changeRouteOrientation(route);
+      });
 
   /// get routeDetails and set orientation setting to the route
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -24,28 +32,21 @@ class NavigatorUtils {
 
 /// handle orientation
 class NavigatorObserverWithOrientation extends NavigatorObserver {
+  final Function(Route route) onNeedChangeRouteOrientation;
+
+  NavigatorObserverWithOrientation(
+      {@required this.onNeedChangeRouteOrientation});
+
   /// set orientation on didPop
   @override
   void didPop(Route route, Route previousRoute) {
-    changeRouteOrientation(previousRoute);
+    onNeedChangeRouteOrientation(previousRoute);
   }
 
   /// set orientation on didPush
   @override
   void didPush(Route route, Route previousRoute) {
-    changeRouteOrientation(route);
-  }
-
-  void changeRouteOrientation(Route route) {
-    /// Change orientation only if it's a PageRoute don't change for ModalBottomSheetRoute etc
-    if (route is PageRoute) {
-      // route has orientation setting
-      if (route.settings.arguments is ScreenOrientation) {
-        OrientationUtils().setOrientation(route.settings.arguments);
-      } else {
-        OrientationUtils().setOrientation(ScreenOrientation.portraitOnly);
-      }
-    }
+    onNeedChangeRouteOrientation(route);
   }
 }
 

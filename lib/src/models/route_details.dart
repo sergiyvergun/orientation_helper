@@ -9,6 +9,6 @@ class RouteDetails {
   RouteDetails({
     @required this.name,
     @required this.page,
-    this.orientation = ScreenOrientation.portraitOnly,
+    this.orientation,
   });
 }
