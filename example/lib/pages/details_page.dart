@@ -1,3 +1,4 @@
+import 'package:example/widgets/more_button.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/cover.dart';
@@ -17,13 +18,20 @@ class DetailsPage extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                  child: Column(
+                  child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(height: 10),
-                      Head(),
-                      Container(height: 11),
-                      Subhead(),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(height: 10),
+                          Head(),
+                          Container(height: 11),
+                          Subhead(),
+                        ],
+                      ),
+                      Spacer(),
+                      MoreButton(),
                     ],
                   ),
                 ),
@@ -37,13 +45,20 @@ class DetailsPage extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                   child: SafeArea(
-                    child: Column(
+                    child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(height: 10),
-                        Head(),
-                        Container(height: 11),
-                        Subhead(),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(height: 10),
+                            Head(),
+                            Container(height: 11),
+                            Subhead(),
+                          ],
+                        ),
+                        Spacer(),
+                        MoreButton(),
                       ],
                     ),
                   ),
