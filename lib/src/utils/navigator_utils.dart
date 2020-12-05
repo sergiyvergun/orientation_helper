@@ -27,21 +27,24 @@ class NavigatorObserverWithOrientation extends NavigatorObserver {
   /// set orientation on didPop
   @override
   void didPop(Route route, Route previousRoute) {
-    if (previousRoute.settings.arguments is ScreenOrientation) {
-      OrientationUtils().setOrientation(previousRoute.settings.arguments);
-    } else {
-      // Portrait-only is the default option
-      OrientationUtils().setOrientation(ScreenOrientation.portraitOnly);
-    }
+    changeRouteOrientation(previousRoute);
   }
 
   /// set orientation on didPush
   @override
   void didPush(Route route, Route previousRoute) {
-    if (route.settings.arguments is ScreenOrientation) {
-      OrientationUtils().setOrientation(route.settings.arguments);
-    } else {
-      OrientationUtils().setOrientation(ScreenOrientation.portraitOnly);
+    changeRouteOrientation(route);
+  }
+
+  void changeRouteOrientation(Route route) {
+    /// Change orientation only if it's a PageRoute don't change for ModalBottomSheetRoute etc
+    if (route is PageRoute) {
+      // route has orientation setting
+      if (route.settings.arguments is ScreenOrientation) {
+        OrientationUtils().setOrientation(route.settings.arguments);
+      } else {
+        OrientationUtils().setOrientation(ScreenOrientation.portraitOnly);
+      }
     }
   }
 }

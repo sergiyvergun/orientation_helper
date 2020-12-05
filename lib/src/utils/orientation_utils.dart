@@ -25,6 +25,7 @@ class OrientationUtils {
         ];
         break;
     }
+
     SystemChrome.setPreferredOrientations(orientations);
   }
 }

@@ -4,13 +4,12 @@ class CustomBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomSheet(
+      enableDrag: true,
       backgroundColor: Colors.grey[700],
       builder: (_) {
         return SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+          child: Wrap(
             children: [
-              BottomSheetTile(),
               BottomSheetTile(),
               BottomSheetTile(),
             ],
