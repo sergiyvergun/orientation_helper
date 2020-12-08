@@ -1,8 +1,6 @@
 # 1.1.0
  - Add possibility to pass parameters to route.
- - 
 
- 
 # 1.0.2
  - Change orientation only for PageRoutes (Don't change orientation when dialogs, bottomSheets ..etc are opened).
  - Add ```defaultOrientation``` property
