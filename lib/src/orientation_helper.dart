@@ -11,6 +11,9 @@ import 'models/route_details.dart';
 class OrientationHelper {
   final List<RouteDetails> routes;
 
+  /// Show the route when any error occured
+  final RouteDetails errorRoute;
+
   /// Orientation for routes that do not have orientation settings
   final ScreenOrientation defaultOrientation;
 
@@ -21,6 +24,7 @@ class OrientationHelper {
 
   OrientationHelper({
     @required this.routes,
+    this.errorRoute,
     this.defaultOrientation = ScreenOrientation.landscapeOnly,
   }) : _navigatorUtils = NavigatorUtils(
           routes: routes,

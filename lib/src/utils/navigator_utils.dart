@@ -7,6 +7,7 @@ import 'orientation_utils.dart';
 
 class NavigatorUtils {
   final List<RouteDetails> routes;
+
   final OrientationUtils orientationUtils;
 
   NavigatorUtils({
@@ -24,6 +25,23 @@ class NavigatorUtils {
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
     var routeDetails = routes
         .firstWhere((RouteDetails details) => details.name == settings.name);
+
+    /// Go to error route if there is no needed one
+    if (routeDetails == null) {
+      var errorPage = routes
+          .firstWhere((RouteDetails details) => details.name == '/error')
+          .page;
+
+      /// There is no possibility to show error page
+      if (errorPage != null) {
+        return MaterialPageRoute(
+          builder: (context) => errorPage,
+          settings: RouteSettings(
+            name: '/error',
+          ),
+        );
+      }
+    }
 
     return MaterialPageRoute(
         builder: (context) => routeDetails.page,

@@ -9,7 +9,8 @@ import '../widgets/subhead.dart';
 class DetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final RouteArguments arguments = ModalRoute.of(context).settings.arguments;
+    final dynamic arguments =
+        (ModalRoute.of(context).settings.arguments as RouteArguments).args;
     print(arguments.args);
     return Scaffold(
       backgroundColor: Colors.black87,

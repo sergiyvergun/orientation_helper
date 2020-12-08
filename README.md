@@ -38,7 +38,7 @@ class AppRoutes {
 
 
 
-Setup OrientationHelper:
+#### Setup OrientationHelper:
 
    ``` dart
 
@@ -72,9 +72,25 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-   ```
+```
 
 Navigate with pushNamed:
 ``` dart
 Navigator.of(context).pushNamed(AppRoutes.details.name);
+```
+
+#### Pass arguments:
+```dart 
+Navigator.of(context).pushNamed(AppRoutes.details.name, arguments: 'Argument');
+```
+
+Get arguments:
+```dart
+class DetailsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+        final dynamic arguments = (ModalRoute.of(context).settings.arguments as RouteArguments).args;
+    return Child();
+  }
+}
 ```
