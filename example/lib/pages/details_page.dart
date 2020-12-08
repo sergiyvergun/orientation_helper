@@ -1,5 +1,6 @@
 import 'package:example/widgets/more_button.dart';
 import 'package:flutter/material.dart';
+import 'package:orientation_helper/orientation_helper.dart';
 
 import '../widgets/cover.dart';
 import '../widgets/head.dart';
@@ -8,6 +9,8 @@ import '../widgets/subhead.dart';
 class DetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final RouteArguments arguments = ModalRoute.of(context).settings.arguments;
+    print(arguments.args);
     return Scaffold(
       backgroundColor: Colors.black87,
       body: OrientationBuilder(

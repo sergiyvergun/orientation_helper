@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:orientation_helper/src/models/route_arguments.dart';
 import 'package:orientation_helper/src/models/route_details.dart';
 import 'package:orientation_helper/src/models/screen_orientation.dart';
 import 'orientation_utils.dart';
@@ -26,7 +27,11 @@ class NavigatorUtils {
 
     return MaterialPageRoute(
         builder: (context) => routeDetails.page,
-        settings: rotationSettings(settings, routeDetails.orientation));
+        settings: RouteSettings(
+          name: settings.name,
+          arguments: RouteArguments(settings.arguments,
+              orientation: routeDetails.orientation),
+        ));
   }
 }
 
@@ -48,9 +53,4 @@ class NavigatorObserverWithOrientation extends NavigatorObserver {
   void didPush(Route route, Route previousRoute) {
     onNeedChangeRouteOrientation(route);
   }
-}
-
-RouteSettings rotationSettings(
-    RouteSettings settings, ScreenOrientation rotation) {
-  return RouteSettings(name: settings.name, arguments: rotation);
 }
