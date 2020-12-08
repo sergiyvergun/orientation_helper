@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:orientation_helper/src/models/route_arguments.dart';
 import 'package:orientation_helper/src/models/route_details.dart';
 import 'package:orientation_helper/src/models/screen_orientation.dart';
 import 'orientation_utils.dart';
 
 class NavigatorUtils {
   final List<RouteDetails> routes;
+
   final OrientationUtils orientationUtils;
 
   NavigatorUtils({
@@ -24,9 +26,30 @@ class NavigatorUtils {
     var routeDetails = routes
         .firstWhere((RouteDetails details) => details.name == settings.name);
 
+    /// Go to error route if there is no needed one
+    if (routeDetails == null) {
+      var errorPage = routes
+          .firstWhere((RouteDetails details) => details.name == '/error')
+          .page;
+
+      /// There is no possibility to show error page
+      if (errorPage != null) {
+        return MaterialPageRoute(
+          builder: (context) => errorPage,
+          settings: RouteSettings(
+            name: '/error',
+          ),
+        );
+      }
+    }
+
     return MaterialPageRoute(
         builder: (context) => routeDetails.page,
-        settings: rotationSettings(settings, routeDetails.orientation));
+        settings: RouteSettings(
+          name: settings.name,
+          arguments: RouteArguments(settings.arguments,
+              orientation: routeDetails.orientation),
+        ));
   }
 }
 
@@ -48,9 +71,4 @@ class NavigatorObserverWithOrientation extends NavigatorObserver {
   void didPush(Route route, Route previousRoute) {
     onNeedChangeRouteOrientation(route);
   }
-}
-
-RouteSettings rotationSettings(
-    RouteSettings settings, ScreenOrientation rotation) {
-  return RouteSettings(name: settings.name, arguments: rotation);
 }

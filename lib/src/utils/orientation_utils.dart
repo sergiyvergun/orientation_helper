@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:orientation_helper/orientation_helper.dart';
 import 'package:orientation_helper/src/models/screen_orientation.dart';
 
 class OrientationUtils {
@@ -10,9 +11,11 @@ class OrientationUtils {
   void changeRouteOrientation(Route route) {
     /// Change orientation only if it's a PageRoute don't change for ModalBottomSheetRoute etc
     if (route is PageRoute) {
-      // route has orientation setting
-      if (route.settings.arguments is ScreenOrientation) {
-        setOrientation(route.settings.arguments);
+      //Check route has orientation setting
+      if (route.settings.arguments is RouteArguments &&
+          (route.settings.arguments as RouteArguments).orientation != null) {
+        setOrientation(
+            (route.settings.arguments as RouteArguments).orientation);
       } else {
         setOrientation(defaultOrientation);
       }

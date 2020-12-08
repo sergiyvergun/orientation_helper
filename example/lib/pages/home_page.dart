@@ -24,7 +24,8 @@ class HomePage extends StatelessWidget {
               child: FlatButton(
                 onPressed: () {
                   /// Navigate with pushNamed
-                  Navigator.of(context).pushNamed(AppRoutes.details.name);
+                  Navigator.of(context)
+                      .pushNamed(AppRoutes.details.name, arguments: 'Argument');
                 },
                 padding: EdgeInsets.all(0),
                 child: Row(
