@@ -11,7 +11,6 @@ class DetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final dynamic arguments =
         (ModalRoute.of(context).settings.arguments as RouteArguments).args;
-    print(arguments.args);
     return Scaffold(
       backgroundColor: Colors.black87,
       body: OrientationBuilder(
